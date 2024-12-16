@@ -1,20 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package aidoutor;
 
 import colecoes.LinkedMap;
 import colecoes.Map;
 import colecoes.SinglyLinkedList;
+
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.IOException;
 
 /**
  * Classe principal para auxílio no diagnóstico de doenças.
  * 
- * @author Pedro
+ * @author *****
  */
 public class AIDoutor {
 
@@ -30,11 +28,14 @@ public class AIDoutor {
     }
 
     /**
-     * Carrega os dados de doenças e sintomas a partir de um arquivo .txt.
+     * Carrega os dados de doenças e sintomas a partir do arquivo Data.txt.
      */
     public void carregarDados() {
-        String caminho = "resources/Data.txt"; // Caminho relativo
-        try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
+        String caminhoArquivo = "main/Data.txt";
+
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream(caminhoArquivo);
+             BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+
             String linha;
             while ((linha = br.readLine()) != null) {
                 String[] partes = linha.split(":");
@@ -50,7 +51,7 @@ public class AIDoutor {
                 }
             }
             System.out.println("Dados carregados a partir do arquivo Data.txt.");
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             System.out.println("Erro ao carregar os dados: " + e.getMessage());
         }
     }
@@ -104,6 +105,7 @@ public class AIDoutor {
             return;
         }
 
+        //System.out.println("A(s) possivel doenca(s) que corresponde(m) aos sintomas sao:");
         boolean encontrouDoenca = false;
 
         for (String doenca : doencasAssociadas.keySet()) {

@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 
 /**
  *
- * @author pedro    
+ * @author *****   
  * @param <E>    
  */
 

@@ -9,7 +9,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author pedro
+ * @author *****
  * @param <K>
  * @param <V>
  */

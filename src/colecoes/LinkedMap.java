@@ -9,7 +9,7 @@ import colecoes.SortedDoublyLinkedList;
 
 /**
  *
- * @author pedro
+ * @author *****
  * @param <K>
  * @param <V>
  */
