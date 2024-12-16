@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main;
 
 import aidoutor.AIDoutor;
@@ -14,35 +10,35 @@ import java.util.Scanner;
  */
 public class main {
 
-    /**
-     * Método principal para iniciar a aplicação.
-     * 
-     * @param args Argumentos da linha de comando.
-     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         AIDoutor aidoutor = new AIDoutor();
 
+        // Carregar os dados do arquivo Data.txt
         aidoutor.carregarDados();
 
+        // Mostrar sintomas disponíveis
         aidoutor.mostrarListaSintomas();
 
+        // Captura de sintomas
         String entrada;
         do {
             System.out.print("Qual o sintoma? ou fim para terminar: ");
             entrada = scanner.nextLine().trim().toLowerCase();
-
             if (!entrada.equals("fim") && !entrada.isEmpty()) {
                 aidoutor.adicionarSintoma(entrada);
             }
         } while (!entrada.equals("fim"));
 
+        // Mostrar sintomas do paciente
         System.out.print("Os sintomas do paciente sao: ");
         aidoutor.mostrarSintomasPaciente();
 
+        // Mostrar doenças associadas
         System.out.println("A(s) possivel doenca(s) que corresponde(m) aos sintomas sao:");
         aidoutor.mostrarDoencas(2);
 
+        // Finalizar
         System.out.println("Cuide-se!");
         scanner.close();
     }

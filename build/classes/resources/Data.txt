@@ -1,0 +1,8 @@
+Febre: suor, dor, febre alta
+Ataque de Panico: nervosismo, suor
+Constipacao: nariz pingado, tosse, febre baixa
+Infeção Viral: febre alta, erupcao cutanea, inchaco
+Tosse Convulsa: tosse, erupcao cutanea, febre alta
+Escarlatina: erupcao cutanea, febre alta, coma
+Refluxo Acido: dor no peito, arrotos
+Ataque Cardiaco: dor no peito, dificuldade em respirar
